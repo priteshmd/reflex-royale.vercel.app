@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useLocation, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { socket } from "../socket";
 
 interface Player {
@@ -10,9 +10,7 @@ interface Player {
 
 function Room() {
   const { roomId } = useParams();
-  const location = useLocation();
   const navigate = useNavigate();
-  const name = location.state?.name;
 
   const [players, setPlayers] = useState<Player[]>([]);
 
